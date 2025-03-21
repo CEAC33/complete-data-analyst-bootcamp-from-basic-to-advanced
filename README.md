@@ -12,3 +12,15 @@
 
 <img width="738" alt="Screenshot 2025-03-21 at 5 17 18 p m" src="https://github.com/user-attachments/assets/1e8cf9f3-245a-48a1-8a17-7fa8365a0165" />
 
+## Getting started with Python
+
+- https://colab.google/
+- New Notebook
+
+- Anaconda
+- VSCode
+
+
+
+
+
