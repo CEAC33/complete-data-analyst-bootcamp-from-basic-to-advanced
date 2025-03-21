@@ -20,6 +20,25 @@
 - Anaconda
 - VSCode
 
+## Complete Python
+
+```
+conda create -p venv python==3.12
+```
+
+```
+conda activate venv/
+```
+
+For running Jupyter Notebooks:
+
+```
+pip install ipykernel
+```
+
+
+
+
 
 
 
