@@ -1042,3 +1042,16 @@ plt.ylabel('Total Sales')
 plt.show()
 ```
 
+## Getting started with Statistics
+
+### Intro to Statistics
+
+<img width="830" alt="Screenshot 2025-03-21 at 7 24 58 p m" src="https://github.com/user-attachments/assets/5452f190-782d-4ecf-bc7e-b600aead6d72" />
+
+<img width="747" alt="Screenshot 2025-03-21 at 7 27 21 p m" src="https://github.com/user-attachments/assets/b533ece9-5881-404c-81be-263ce4d84220" />
+
+<img width="637" alt="Screenshot 2025-03-21 at 8 16 09 p m" src="https://github.com/user-attachments/assets/a044ce7e-bc8b-44d6-854d-c68f3b08d54c" />
+
+### Types of Statistics
+
+
