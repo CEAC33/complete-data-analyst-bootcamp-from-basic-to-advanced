@@ -190,19 +190,19 @@ list(filter(age_greater_than_25, people))
 
 ### Numpy
 
-# NumPy Basics
+### NumPy Basics
 
 NumPy is a fundamental library for scientific computing in Python. It provides support for arrays and matrices, along with a collection of mathematical functions to operate on these data structures. In this lesson, we will cover the basics of NumPy, focusing on arrays and vectorized operations.
 
-## Installation
+### Installation
 
 ```python
 !pip install numpy
 ```
 
-## Creating Arrays
+### Creating Arrays
 
-### Basic Array Creation
+#### Basic Array Creation
 ```python
 import numpy as np
 
@@ -219,7 +219,7 @@ Output:
 (5,)
 ```
 
-### Reshaping Arrays
+#### Reshaping Arrays
 ```python
 # 1D array reshaped to 2D
 arr2 = np.array([1,2,3,4,5])
@@ -230,7 +230,7 @@ Output:
 array([[1, 2, 3, 4, 5]])
 ```
 
-### Shape Verification
+#### Shape Verification
 ```python
 arr2 = np.array([[1,2,3,4,5]])
 arr2.shape
@@ -240,7 +240,7 @@ Output:
 (1, 5)
 ```
 
-### 2D Arrays
+#### 2D Arrays
 ```python
 # Create a 2D array
 arr2 = np.array([[1,2,3,4,5],[2,3,4,5,6]])
@@ -254,9 +254,9 @@ Output:
 (2, 5)
 ```
 
-### Array Creation Functions
+#### Array Creation Functions
 
-#### Using arange
+##### Using arange
 ```python
 np.arange(0,10,2).reshape(5,1)
 ```
@@ -269,7 +269,7 @@ array([[0],
        [8]])
 ```
 
-#### Creating Arrays of Ones
+##### Creating Arrays of Ones
 ```python
 np.ones((3,4))
 ```
@@ -280,7 +280,7 @@ array([[1., 1., 1., 1.],
        [1., 1., 1., 1.]])
 ```
 
-#### Identity Matrix
+##### Identity Matrix
 ```python
 # Create an identity matrix
 np.eye(3)
@@ -292,7 +292,7 @@ array([[1., 0., 0.],
        [0., 0., 1.]])
 ```
 
-## Array Attributes
+### Array Attributes
 
 ```python
 # Demonstrating array attributes
@@ -317,7 +317,7 @@ Data type: int32
 Item size (in bytes): 4
 ```
 
-## NumPy Vectorized Operations
+### NumPy Vectorized Operations
 
 ```python
 arr1 = np.array([1,2,3,4,5])
