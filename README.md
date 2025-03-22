@@ -1054,4 +1054,22 @@ plt.show()
 
 ### Types of Statistics
 
+<img width="824" alt="Screenshot 2025-03-21 at 8 17 42 p m" src="https://github.com/user-attachments/assets/eae0ef1a-d534-42fe-a746-61bc31429746" />
 
+Descriptive:
+
+<img width="420" alt="Screenshot 2025-03-21 at 8 21 17 p m" src="https://github.com/user-attachments/assets/77b09a22-5722-4f6f-a5ce-203323acc31e" />
+
+<img width="260" alt="Screenshot 2025-03-21 at 8 21 59 p m" src="https://github.com/user-attachments/assets/f27b810c-538a-451d-8920-14321198dbdf" />
+
+Inferential:
+
+<img width="270" alt="Screenshot 2025-03-21 at 8 24 07 p m" src="https://github.com/user-attachments/assets/6905355f-7d8a-4d4a-955b-36e2d1a8f85a" />
+
+<img width="260" alt="Screenshot 2025-03-21 at 8 24 28 p m" src="https://github.com/user-attachments/assets/57771a1b-2a6f-40b7-8a5c-833b16f1b688" />
+
+<img width="544" alt="Screenshot 2025-03-21 at 8 25 19 p m" src="https://github.com/user-attachments/assets/468dd50f-4c46-4c9c-8dca-c686a362c215" />
+
+<img width="838" alt="Screenshot 2025-03-21 at 8 28 12 p m" src="https://github.com/user-attachments/assets/ffc6163c-bdf5-4d1c-a7a1-d9e1852b56eb" />
+
+### Population and Sample Data
