@@ -720,3 +720,186 @@ Sample output (first few rows):
 - `parse_dates`: Specify columns to parse as dates
 
 This guide covers the basics of reading data from different sources using Pandas. The library supports many more formats including Excel, SQL databases, HTML tables, and more.
+
+## Data Visualization With Matplotlib
+
+Matplotlib is a powerful plotting library for Python that enables the creation of static, animated, and interactive visualizations. It is widely used for data visualization in data science and analytics.
+
+```python
+!pip install matplotlib
+```
+
+```python
+import matplotlib.pyplot as plt
+```
+
+```python
+x=[1,2,3,4,5]
+y=[1,4,9,16,25]
+
+##create a line plot
+plt.plot(x,y)
+plt.xlabel('X axis')
+plt.ylabel('Y Axis')
+plt.title("Basic Line Plot")
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/73b41c05-f7b2-4884-8b76-09325941e771)
+
+```python
+x=[1,2,3,4,5]
+y=[1,4,9,16,25]
+
+##create a customized line plot
+
+plt.plot(x,y,color='red',linestyle='--',marker='o',linewidth=3,markersize=9)
+plt.grid(True)
+```
+
+![image](https://github.com/user-attachments/assets/63410faa-2f01-4112-a393-74219b11b633)
+
+```python
+## Multiple Plots
+## Sample data
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 9, 16, 25]
+y2 = [1, 2, 3, 4, 5]
+
+plt.figure(figsize=(9,5))
+
+plt.subplot(2,2,1)
+plt.plot(x,y1,color='green')
+plt.title("Plot 1")
+
+plt.subplot(2,2,2)
+plt.plot(y1,x,color='red')
+plt.title("Plot 2")
+
+plt.subplot(2,2,3)
+plt.plot(x,y2,color='blue')
+plt.title("Plot 3")
+
+plt.subplot(2,2,4)
+plt.plot(x,y2,color='green')
+plt.title("Plot 4")
+```
+
+```python
+###Bar Plor
+categories=['A','B','C','D','E']
+values=[5,7,3,8,6]
+
+##create a bar plot
+plt.bar(categories,values,color='purple')
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Bar Plot')
+plt.show()
+```
+
+### Histograms
+
+Histograms are used to represent the distribution of a dataset. They divide the data into bins and count the number of data points in each bin.
+
+```python
+# Sample data
+data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]
+
+##create a histogram
+plt.hist(data,bins=5,color='orange',edgecolor='black')
+```
+
+![image](https://github.com/user-attachments/assets/4fa0f998-6cc9-48bb-91a9-01f6d261714f)
+
+```python
+##create a scatter plot
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 4, 5, 6]
+
+plt.scatter(x,y,color="blue",marker='x')
+```
+
+![image](https://github.com/user-attachments/assets/d4fc4ea3-1218-4618-bd0a-896af66ae1b6)
+
+```python
+### pie chart
+
+labels=['A','B','C','D']
+sizes=[30,20,40,10]
+colors=['gold','yellowgreen','lightcoral','lightskyblue']
+explode=(0.2,0,0,0) ##move out the 1st slice
+
+##create apie chart
+plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct="%1.1f%%",shadow=True)
+```
+
+![image](https://github.com/user-attachments/assets/cd905923-af94-4850-8675-b0c121e0d659)
+
+```python
+## Sales Data Visualization
+import pandas as pd
+sales_data_df=pd.read_csv('sales_data.csv')
+sales_data_df.head(5)
+```
+
+<img width="731" alt="Screenshot 2025-03-21 at 6 49 41 p m" src="https://github.com/user-attachments/assets/e20e1fc6-3f88-46b2-96a6-7fc7556927bf" />
+
+```python
+sales_data_df.info()
+```
+
+Output:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 240 entries, 0 to 239
+Data columns (total 9 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   Transaction ID    240 non-null    int64  
+ 1   Date              240 non-null    object 
+ 2   Product Category  240 non-null    object 
+ 3   Product Name      240 non-null    object 
+ 4   Units Sold        240 non-null    int64  
+ 5   Unit Price        240 non-null    float64
+ 6   Total Revenue     240 non-null    float64
+ 7   Region            240 non-null    object 
+ 8   Payment Method    240 non-null    object 
+dtypes: float64(2), int64(2), object(5)
+memory usage: 17.0+ KB
+```
+
+```python
+## plot total sales by products
+total_sales_by_product=sales_data_df.groupby('Product Category')['Total Revenue'].sum()
+print(total_sales_by_product)
+```
+
+Output:
+```
+Product Category
+Beauty Products     2621.90
+Books               1861.93
+Clothing            8128.93
+Electronics        34982.41
+Home Appliances    18646.16
+Sports             14326.52
+Name: Total Revenue, dtype: float64
+```
+
+```python
+total_sales_by_product.plot(kind='bar',color='teal')
+```
+
+![image](https://github.com/user-attachments/assets/4c12ca44-3705-4274-860b-f588eee6b03e)
+
+```python
+## plot sales trend over time
+sales_trend=sales_data_df.groupby('Date')['Total Revenue'].sum().reset_index()
+plt.plot(sales_trend['Date'],sales_trend['Total Revenue'])
+```
+
+![image](https://github.com/user-attachments/assets/de0c44bb-d182-447a-a055-03e250b4282e)
+
+
