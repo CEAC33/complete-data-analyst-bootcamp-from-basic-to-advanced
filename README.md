@@ -343,3 +343,141 @@ Multiplication: [ 10  40  90 160 250]
 Division: [0.1 0.1 0.1 0.1 0.1]
 ```
 
+## Pandas - DataFrame And Series
+
+Pandas is a powerful data manipulation library in Python, widely used for data analysis and data cleaning. It provides two primary data structures: Series and DataFrame. A Series is a one-dimensional array-like object, while a DataFrame is a two-dimensional, size-mutable, and potentially heterogeneous tabular data structure with labeled axes (rows and columns).
+
+### Basic Setup
+
+```python
+import pandas as pd
+```
+
+### Pandas Series
+
+A Pandas Series is a one-dimensional array-like object that can hold any data type. It is similar to a column in a table.
+
+#### Creating a Basic Series
+```python
+import pandas as pd
+data = [1,2,3,4,5]
+series = pd.Series(data)
+print("Series \n", series)
+print(type(series))
+```
+Output:
+```
+Series 
+ 0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+<class 'pandas.core.series.Series'>
+```
+
+#### Creating a Series from Dictionary
+```python
+data = {'a':1, 'b':2, 'c':3}
+series_dict = pd.Series(data)
+print(series_dict)
+```
+Output:
+```
+a    1
+b    2
+c    3
+dtype: int64
+```
+
+#### Creating a Series with Custom Index
+```python
+data = [10,20,30]
+index = ['a','b','c']
+pd.Series(data, index=index)
+```
+Output:
+```
+a    10
+b    20
+c    30
+dtype: int64
+```
+
+### Pandas DataFrame
+
+#### Creating DataFrame from Dictionary of Lists
+```python
+data = {
+    'Name': ['Krish', 'John', 'Jack'],
+    'Age': [25, 30, 45],
+    'City': ['Bangalore', 'New York', 'Florida']
+}
+df = pd.DataFrame(data)
+print(df)
+print(type(df))
+```
+Output:
+```
+    Name  Age       City
+0  Krish   25  Bangalore
+1   John   30   New York
+2   Jack   45    Florida
+<class 'pandas.core.frame.DataFrame'>
+```
+
+#### Creating DataFrame from List of Dictionaries
+```python
+data = [
+    {'Name':'Krish', 'Age':32, 'City':'Bangalore'},
+    {'Name':'John', 'Age':34, 'City':'Bangalore'},
+    {'Name':'Bappy', 'Age':32, 'City':'Bangalore'},
+    {'Name':'Jack', 'Age':32, 'City':'Bangalore'}
+]
+df = pd.DataFrame(data)
+print(df)
+print(type(df))
+```
+Output:
+```
+    Name  Age       City
+0  Krish   32  Bangalore
+1   John   34  Bangalore
+2  Bappy   32  Bangalore
+3   Jack   32  Bangalore
+<class 'pandas.core.frame.DataFrame'>
+```
+
+#### Sample Sales Data DataFrame
+```python
+# Sample sales data
+sales_data = {
+    'Transaction ID': [10001, 10002, 10003, 10004],
+    'Date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04'],
+    'Product Category': ['Electronics', 'Home Appliances', 'Clothing', 'Books'],
+    'Product Name': ['iPhone 14 Pro', 'Dyson V11 Vacuum', "Levi's 501 Jeans", 'The Da Vinci Code'],
+    'Units Sold': [2, 1, 3, 4],
+    'Unit Price': [999.99, 499.99, 69.99, 15.99],
+    'Total Revenue': [1999.98, 499.99, 209.97, 63.96],
+    'Region': ['North America', 'Europe', 'Asia', 'North America'],
+    'Payment Method': ['Credit Card', 'PayPal', 'Debit Card', 'Credit Card']
+}
+
+df_sales = pd.DataFrame(sales_data)
+print(df_sales)
+```
+
+This creates a more complex DataFrame with sales data including:
+- Transaction details
+- Product information
+- Sales metrics
+- Regional data
+- Payment information
+
+The DataFrame provides a structured way to work with this tabular data, making it easy to perform operations like:
+- Data analysis
+- Filtering
+- Grouping
+- Aggregations
+- Statistical calculations
