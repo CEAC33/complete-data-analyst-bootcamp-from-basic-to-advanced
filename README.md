@@ -61,7 +61,7 @@ even(24)
 ```
 
 ```
-even1 = lambda num:num%2==0
+even1 =  num:num%2==0
 even1(12)
 ```
 
@@ -161,7 +161,7 @@ even_numbers = list(filter(even, lst))
 ```
 ## filter with lambda function
 numbers = [1,2,3,4,5,6,7,8,9]
-greater_than_five=list(filter(lambdax:x>5, numbers))
+greater_than_five=list(filter(lambda x:x>5, numbers))
 print(greater_than_five)
 ```
 
