@@ -902,4 +902,143 @@ plt.plot(sales_trend['Date'],sales_trend['Total Revenue'])
 
 ![image](https://github.com/user-attachments/assets/de0c44bb-d182-447a-a055-03e250b4282e)
 
+## Data Visualization With Seaborn
+
+Seaborn is a Python visualization library based on Matplotlib that provides a high-level interface for drawing attractive and informative statistical graphics. Seaborn helps in creating complex visualizations with just a few lines of code. In this lesson, we will cover the basics of Seaborn, including creating various types of plots and customizing them. 
+
+```python
+!pip install seaborn
+```
+
+```python
+import seaborn as sns
+```
+
+```python
+### Basic Plotting With Seaborn
+tips=sns.load_dataset('tips')
+tips
+```
+
+<img width="436" alt="Screenshot 2025-03-21 at 6 55 57 p m" src="https://github.com/user-attachments/assets/ae2ff494-3830-4e1f-8c53-2854dae490f9" />
+
+```python
+##create a scatter plot
+import matplotlib.pyplot as plt
+
+sns.scatterplot(x='total_bill',y='tip',data=tips)
+plt.title("Scatter Plot of Total Bill vs Tip")
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/6eb1ae27-4b2e-41ca-a7cc-2d0e343d14f8)
+
+
+```python
+## Line Plot
+
+sns.lineplot(x='size',y='total_bill',data=tips)
+plt.title("Line Plot of Total bill by size")
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/4a34a873-a381-4bc7-a7fd-9e4b09a23b69)
+
+```python
+## Categorical Plots
+## BAr Plot
+sns.barplot(x='day',y='total_bill',data=tips)
+plt.title('Bar Plot of Total Bill By Day')
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/e106cd3c-81ec-4dde-8095-1606725655e2)
+
+```python
+## Box Plot
+sns.boxplot(x="day",y='total_bill',data=tips)
+```
+
+![image](https://github.com/user-attachments/assets/aa25505b-37cf-48fa-bc3c-41eb85f8fe93)
+
+```python
+## Violin Plot
+
+sns.violinplot(x='day',y='total_bill',data=tips)
+```
+
+![image](https://github.com/user-attachments/assets/7e65e8fa-92cf-49e2-b09d-161fabb88777)
+
+
+```python
+### Histograms
+sns.histplot(tips['total_bill'],bins=10,kde=True)
+```
+
+![image](https://github.com/user-attachments/assets/a0948ced-af69-4cb8-87ed-fd4b7b0ae7a7)
+
+
+```python
+## KDE Plot
+sns.kdeplot(tips['total_bill'],fill=True)
+```
+
+![image](https://github.com/user-attachments/assets/f76016cb-dccd-42f3-8a01-99813f8189c6)
+
+```python
+# Pairplot
+sns.pairplot(tips)
+```
+
+![image](https://github.com/user-attachments/assets/ea64ca6f-03e2-4f31-9c32-29dfc7747f77)
+
+```python
+tips 
+```
+
+<img width="419" alt="Screenshot 2025-03-21 at 6 59 59 p m" src="https://github.com/user-attachments/assets/9745a21c-f9e7-47f2-a2b7-566e6ffd3f71" />
+
+```python
+## HEatmap
+corr=tips[['total_bill','tip','size']].corr()
+corr
+```
+
+<img width="302" alt="Screenshot 2025-03-21 at 7 00 50 p m" src="https://github.com/user-attachments/assets/7d989e9c-29da-4d00-88a6-e62810952cb5" />
+
+```python
+sns.heatmap(corr,annot=True,cmap='coolwarm') 
+```
+
+![image](https://github.com/user-attachments/assets/767cadb1-f001-4b23-b9b4-3bdc1a35089c)
+
+```python
+import pandas as pd
+sales_df=pd.read_csv('sales_data.csv')
+sales_df.head()
+```
+
+<img width="740" alt="Screenshot 2025-03-21 at 7 01 51 p m" src="https://github.com/user-attachments/assets/ad5257ee-5622-4e40-9978-6e3975164c6c" />
+
+```python
+## Plot total sales by product
+plt.figure(figsize=(10,6))
+sns.barplot(x='Product Category',y="Total Revenue",data=sales_df,estimator=sum)
+plt.title('Total Sales by Product')
+plt.xlabel('Product')
+plt.ylabel('Total Sales')
+plt.show() 
+```
+
+![image](https://github.com/user-attachments/assets/6f1bd428-7fd0-4ea3-8655-e1ddc83cd5aa)
+
+```python
+## Plot total sales by Region
+plt.figure(figsize=(10,6))
+sns.barplot(x='Region',y="Total Revenue",data=sales_df,estimator=sum)
+plt.title('Total Sales by Region')
+plt.xlabel('Region')
+plt.ylabel('Total Sales')
+plt.show()
+```
 
