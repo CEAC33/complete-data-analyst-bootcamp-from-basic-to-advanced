@@ -481,3 +481,132 @@ The DataFrame provides a structured way to work with this tabular data, making i
 - Grouping
 - Aggregations
 - Statistical calculations
+
+## Data Manipulation and Analysis with Pandas
+
+Data manipulation and analysis are key tasks in any data science or data analysis project. Pandas provides a wide range of functions for data manipulation and analysis, making it easier to clean, transform, and extract insights from data. In this lesson, we will cover various data manipulation and analysis techniques using Pandas.
+
+### Setup and Data Loading
+
+```python
+import pandas as pd
+
+# Load the sample dataset
+df = pd.read_csv('data.csv')
+```
+
+### Basic Data Exploration
+
+#### Viewing First Few Rows
+```python
+# Fetch the first 5 rows
+df.head(5)
+```
+Output:
+```
+         Date Category  Value   Product  Sales Region
+0  2023-01-01        A   28.0  Product1  754.0   East
+1  2023-01-02        B   39.0  Product3  110.0  North
+2  2023-01-03        C   32.0  Product2  398.0   East
+3  2023-01-04        B    8.0  Product1  522.0   East
+4  2023-01-05        B   26.0  Product3  869.0  North
+```
+
+#### Viewing Last Few Rows
+```python
+df.tail(5)
+```
+Output:
+```
+          Date Category  Value   Product  Sales Region
+45  2023-02-15        B   99.0  Product2  599.0   West
+46  2023-02-16        B    6.0  Product1  938.0  South
+47  2023-02-17        B   69.0  Product3  143.0   West
+48  2023-02-18        C   65.0  Product3  182.0  North
+49  2023-02-19        C   11.0  Product3  708.0  North
+```
+
+### Data Structure Overview
+
+The sample dataset contains the following columns:
+- `Date`: Transaction date
+- `Category`: Product category (A, B, C)
+- `Value`: Numeric value associated with the transaction
+- `Product`: Product identifier (Product1, Product2, Product3)
+- `Sales`: Sales amount
+- `Region`: Geographic region (East, North, South, West)
+
+## Common Data Manipulation Tasks
+
+#### 1. Basic Information
+```python
+# Display basic information about the dataset
+df.info()
+```
+
+#### 2. Statistical Summary
+```python
+# Generate summary statistics
+df.describe()
+```
+
+#### 3. Filtering Data
+```python
+# Filter rows based on conditions
+east_region = df[df['Region'] == 'East']
+high_sales = df[df['Sales'] > 500]
+```
+
+#### 4. Grouping and Aggregation
+```python
+# Group by Region and calculate mean sales
+region_sales = df.groupby('Region')['Sales'].mean()
+
+# Group by multiple columns
+category_region = df.groupby(['Category', 'Region']).agg({
+    'Sales': 'mean',
+    'Value': 'sum'
+})
+```
+
+#### 5. Sorting Data
+```python
+# Sort by Sales in descending order
+df_sorted = df.sort_values('Sales', ascending=False)
+
+# Sort by multiple columns
+df_multi_sort = df.sort_values(['Region', 'Sales'], ascending=[True, False])
+```
+
+#### 6. Data Transformation
+```python
+# Add new calculated column
+df['Revenue'] = df['Sales'] * df['Value']
+
+# Apply date transformations
+df['Month'] = pd.to_datetime(df['Date']).dt.month
+```
+
+### Best Practices for Data Manipulation
+
+1. **Data Integrity**
+   - Always keep a copy of the original data
+   - Verify data types are correct
+   - Handle missing values appropriately
+
+2. **Performance**
+   - Use vectorized operations instead of loops
+   - Chain operations efficiently
+   - Consider memory usage for large datasets
+
+3. **Documentation**
+   - Document data transformations
+   - Keep track of filtering criteria
+   - Note any assumptions made
+
+4. **Quality Checks**
+   - Verify results after transformations
+   - Check for unexpected values
+   - Validate aggregations
+
+This overview covers the fundamental aspects of data manipulation with Pandas, providing a foundation for more advanced analysis techniques.
