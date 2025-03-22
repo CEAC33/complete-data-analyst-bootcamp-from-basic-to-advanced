@@ -186,4 +186,160 @@ def age_greater_than_25(person)
 list(filter(age_greater_than_25, people))
 ```
 
+## Data Analysis
+
+### Numpy
+
+# NumPy Basics
+
+NumPy is a fundamental library for scientific computing in Python. It provides support for arrays and matrices, along with a collection of mathematical functions to operate on these data structures. In this lesson, we will cover the basics of NumPy, focusing on arrays and vectorized operations.
+
+## Installation
+
+```python
+!pip install numpy
+```
+
+## Creating Arrays
+
+### Basic Array Creation
+```python
+import numpy as np
+
+# Create a 1D array
+arr1 = np.array([1,2,3,4,5])
+print(arr1)
+print(type(arr1))
+print(arr1.shape)
+```
+Output:
+```
+[1 2 3 4 5]
+<class 'numpy.ndarray'>
+(5,)
+```
+
+### Reshaping Arrays
+```python
+# 1D array reshaped to 2D
+arr2 = np.array([1,2,3,4,5])
+arr2.reshape(1,5)  # 1 row and 5 columns
+```
+Output:
+```
+array([[1, 2, 3, 4, 5]])
+```
+
+### Shape Verification
+```python
+arr2 = np.array([[1,2,3,4,5]])
+arr2.shape
+```
+Output:
+```
+(1, 5)
+```
+
+### 2D Arrays
+```python
+# Create a 2D array
+arr2 = np.array([[1,2,3,4,5],[2,3,4,5,6]])
+print(arr2)
+print(arr2.shape)
+```
+Output:
+```
+[[1 2 3 4 5]
+ [2 3 4 5 6]]
+(2, 5)
+```
+
+### Array Creation Functions
+
+#### Using arange
+```python
+np.arange(0,10,2).reshape(5,1)
+```
+Output:
+```
+array([[0],
+       [2],
+       [4],
+       [6],
+       [8]])
+```
+
+#### Creating Arrays of Ones
+```python
+np.ones((3,4))
+```
+Output:
+```
+array([[1., 1., 1., 1.],
+       [1., 1., 1., 1.],
+       [1., 1., 1., 1.]])
+```
+
+#### Identity Matrix
+```python
+# Create an identity matrix
+np.eye(3)
+```
+Output:
+```
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+
+## Array Attributes
+
+```python
+# Demonstrating array attributes
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+print("Array:\n", arr)
+print("Shape:", arr.shape)  # Output: (2, 3)
+print("Number of dimensions:", arr.ndim)  # Output: 2
+print("Size (number of elements):", arr.size)  # Output: 6
+print("Data type:", arr.dtype)  # Output: int32
+print("Item size (in bytes):", arr.itemsize)  # Output: 4
+```
+Output:
+```
+Array:
+ [[1 2 3]
+ [4 5 6]]
+Shape: (2, 3)
+Number of dimensions: 2
+Size (number of elements): 6
+Data type: int32
+Item size (in bytes): 4
+```
+
+## NumPy Vectorized Operations
+
+```python
+arr1 = np.array([1,2,3,4,5])
+arr2 = np.array([10,20,30,40,50])
+
+# Element-wise addition
+print("Addition:", arr1 + arr2)
+
+# Element-wise subtraction
+print("Subtraction:", arr1 - arr2)
+
+# Element-wise multiplication
+print("Multiplication:", arr1 * arr2)
+
+# Element-wise division
+print("Division:", arr1 / arr2)
+```
+Output:
+```
+Addition: [11 22 33 44 55]
+Subtraction: [ -9 -18 -27 -36 -45]
+Multiplication: [ 10  40  90 160 250]
+Division: [0.1 0.1 0.1 0.1 0.1]
+```
 
