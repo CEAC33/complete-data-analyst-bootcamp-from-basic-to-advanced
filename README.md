@@ -40,7 +40,7 @@ pip install ipykernel
 
 Anonymous Function, any number of arguments but only one expression
 
-```
+```python
 #Basic Function
 def addition(a,b):
   return a+b
@@ -52,7 +52,7 @@ adition = lambda a,b:a+b
 type(addition)
 addition(5,6)
 ```
-```
+```python
 def even(num):
   if even%2==0:
     return True
@@ -60,12 +60,12 @@ def even(num):
 even(24)
 ```
 
-```
+```python
 even1 =  num:num%2==0
 even1(12)
 ```
 
-```
+```python
 def adition(x,y,z):
   return x+y+z
 
@@ -75,7 +75,7 @@ addition1=lambda x,y,z:x+y+z
 addition1(12,13,14)
 ```
 
-```
+```python
 ## map() - applies a function to all items in a list
 numbers = [1,2,3,4,5,6]
 def square(number):
@@ -91,7 +91,7 @@ list(map(lambda x:x**2, numbers))
 
 Applies funtion to all items in an input list or iterable and return a map object (an iterator)
 
-```
+```python
 def square(x):
   return x*x
 
@@ -102,13 +102,13 @@ numbers=[1,2,3,4,5,6,7,8]
 list(map(square, numbers))
 ```
 
-```
+```python
 ## Lambda function with map
 numbers=[1,2,3,4,5,6,7,8]
 list(map(lambda x:x*x, numbers))
 ```
 
-```
+```python
 ## Map Multiple iterables
 numbers1 = [1,2,3]
 numbers2 = [4,5,6]
@@ -117,7 +117,7 @@ added_numbers=list(map(lambda x,y:x+y, numbers1, numbers2))
 print(added_numbers)
 ```
 
-```
+```python
 # map() to convert a list of strings to integers
 str_numbers = ['1', '2', '3', '4', '5']
 int_numbers = list(map(int, str_numbers))
@@ -125,13 +125,13 @@ int_numbers = list(map(int, str_numbers))
 print(int_numbers)
 ```
 
-```
+```python
 words=['apple', 'banana', 'cherry']
 upper_words=list(map(str.upper, words))
 print(upper_words)
 ```
 
-```
+```python
 def get_name(person):
   return person['name']
 
@@ -146,7 +146,7 @@ list(map(get_name, people))
 
 Constructs an iterator from elements of an iterable for which a function return true
 
-```
+```python
 def even(num):
   if num%2==0:
     return True
@@ -158,21 +158,21 @@ lst=[1,2,3,4,5,6,7,8,9,10,11,12]
 even_numbers = list(filter(even, lst))
 ```
 
-```
+```python
 ## filter with lambda function
 numbers = [1,2,3,4,5,6,7,8,9]
 greater_than_five=list(filter(lambda x:x>5, numbers))
 print(greater_than_five)
 ```
 
-```
+```python
 ## filter with lambda function and multiple conditions
 numbers = [1,2,3,4,5,6,7,8,9]
 even_and_greater_than_five=list(filter(lambda x:x>5 and x%2==0, numbers))
 print(even_and_greater_than_five)
 ```
 
-```
+```python
 ## filter to check if the age is greater than 25 in dictionaries
 people = [
   {'name':'Krish', 'age':32},
