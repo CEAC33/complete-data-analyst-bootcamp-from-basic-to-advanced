@@ -1073,3 +1073,6 @@ Inferential:
 <img width="838" alt="Screenshot 2025-03-21 at 8 28 12 p m" src="https://github.com/user-attachments/assets/ffc6163c-bdf5-4d1c-a7a1-d9e1852b56eb" />
 
 ### Population and Sample Data
+
+<img width="823" alt="Screenshot 2025-03-21 at 8 30 15 p m" src="https://github.com/user-attachments/assets/92e6f515-81a3-4750-bb75-5559e7413fc8" />
+
